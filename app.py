@@ -17,7 +17,7 @@ def verify():
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
 
-    return "Go Go Power Ranger V2", 200
+    return "Go Go Power Ranger V3", 200
 
 
 @app.route('/', methods=['POST'])
