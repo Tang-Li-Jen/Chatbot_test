@@ -17,7 +17,7 @@ def verify():
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
 
-    return "Go Go Power Ranger V3", 200
+    return "Go Go Power Ranger V4", 200
 
 
 @app.route('/', methods=['POST'])
@@ -40,7 +40,7 @@ def webhook():
                     if messaging_event["message"].get("text"):
                         message_text = messaging_event["message"]["text"]  # the message's text
                     else:
-                        message_text ='Sorry, NO picture!'
+                        message_text ='Opps, no picture!'
                     send_message(sender_id, message_text)
 
                 if messaging_event.get("delivery"):  # delivery confirmation
