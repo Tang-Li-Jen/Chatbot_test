@@ -3,7 +3,6 @@ import sys
 import json
 import requests
 from flask import Flask, request
-sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 
