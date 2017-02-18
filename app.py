@@ -42,7 +42,7 @@ def webhook():
                             message_text = messaging_event["message"]["text"]  # the message's text
                             send_message(sender_id, message_text)
                         except UnicodeEncodeError:
-                            pass
+                            send_message(sender_id, "Chinese is unacceptable!")
                     else:
                         #message_text ='Opps, no picture!'
                         send_image(sender_id)
