@@ -127,7 +127,7 @@ def get_start(USER_DEFINED_PAYLOAD):
         log(g.text)
 """
 def log(message):  # simple wrapper for logging to stdout on heroku
-    print str(message)
+    print (str(message))
     sys.stdout.flush()
 
 
