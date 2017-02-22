@@ -43,7 +43,7 @@ def webhook():
                             message_text = messaging_event["message"]["text"]  # the message's text
                             send_message(sender_id, message_text)
                         except UnicodeEncodeError:
-                            if message_text.encode('utf-8') == '??'
+                            if message_text.encode('utf-8') == '??' :
                                 send_message(sender_id, " :( ")
                             else:
                                 send_message(sender_id, message_text.encode('utf-8')
