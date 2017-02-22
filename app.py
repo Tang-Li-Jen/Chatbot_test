@@ -44,13 +44,13 @@ def webhook():
                             send_message(sender_id, message_text)
                         except UnicodeEncodeError:
                             if message_text.encode('utf-8') == '??' :
-                                send_message(sender_id, " :( ")
+                                send_message(sender_id, " :| ")
                             else:
-                                send_message(sender_id, message_text.encode('utf-8')
+                                send_message(sender_id, message_text.encode('utf-8'))
                     else:
                         #message_text ='Opps, no picture!'
                         send_image(sender_id)
-                    #send_message(sender_id, message_text)
+                        #send_message(sender_id, message_text)
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
