@@ -111,6 +111,45 @@ def send_image(recipient_id):
         log(i.status_code)
         log(i.text)
 
+
+def greeting(recipient_id):
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "setting_type":'greeting',
+        "greeting":{
+            "text":"Hi,I am a beauty robot :D"
+            }
+    })
+    g = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
+    if g.status_code != 200:
+        log(g.status_code)
+        log(g.text)
+
+def get_start(USER_DEFINED_PAYLOAD):
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "setting_type":"call_to_actions",
+        "thread_state":"new_thread",
+        "call_to_actions":[
+            {
+                "payload": "USER_DEFINED_PAYLOAD"
+            }
+        ]
+    })
+    s = requests.post("https://graph.facebook.com/v2.6/me/thread_settings",params=params,headers=headers,data=data)
+    if s.status_code !=200:
+        log(s.status_code)
+        log(s.text)
 """
 def get_start(USER_DEFINED_PAYLOAD):
     params = {
