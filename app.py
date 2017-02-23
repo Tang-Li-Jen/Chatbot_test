@@ -112,7 +112,7 @@ def send_image(recipient_id):
         log(i.text)
 
 
-def greeting():
+def greeting(t):
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
@@ -130,7 +130,7 @@ def greeting():
         log(g.status_code)
         log(g.text)
 
-def get_start():
+def get_start(t):
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
@@ -176,8 +176,8 @@ def log(message):  # simple wrapper for logging to stdout on heroku
     print str(message)
     sys.stdout.flush()
 
-greeting()
-get_start()
+greeting(1)
+get_start(1)
 
 
 if __name__ == '__main__':
