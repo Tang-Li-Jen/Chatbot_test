@@ -1,8 +1,3 @@
 # Chatbot_test
-just a simple test 
+just a simple facebook echo bot test 
 
-My facebook chatbot can do thing like: 
-1.start button
-2.greeting  
-3.echo
-4.send 'aqua' image!
